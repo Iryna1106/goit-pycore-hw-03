@@ -3,15 +3,12 @@ import re
 def normalize_phone(phone_number):
     phone_number = re.sub(r'[^\d+]','',phone_number.strip())
     if phone_number.startswith('+'):
-        if phone_number.startswith('+380'):
-            return phone_number
-        else :
-            return phone_number
+        return phone_number
     else:
         if phone_number.startswith('380'):
             return '+'+phone_number
         else:
-            return '+380'+phone_number
+            return '+38'+phone_number
 raw_numbers = [
     "067\\t123 4567",
     "(095) 234-5678\\n",
